@@ -6,7 +6,7 @@ echo "net.ipv6.conf.lo.disable_ipv6 = 0" >> /etc/sysctl.conf
 sysctl -p
 sleep 1
 
-echo "nameserver 2001:4860:4860::8888" >> /etc/resolv.conf
+sed -i 'nameserver 2001:4860:4860::8888' /etc/resolv.conf
 
 echo "auto he-ipv6" >> /etc/network/interfaces
 echo "iface he-ipv6 inet6 v4tunnel" >> /etc/network/interfaces
